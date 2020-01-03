@@ -14,7 +14,7 @@ public class TestUsuario {
 	public static void main(String[] args) {
 		IUsuarioDao usuarioDao = new UsuarioDaoImp();
 		List<Usuario> lista = usuarioDao.getAll(Usuario.class);
-		System.out.println(lista.size());
+		System.out.println("Cantidad Usuarios " + lista.size());
 
 	}
 

@@ -7,6 +7,7 @@
     <session-factory>
   
         <!-- Connection settings -->
+        <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/ventaInstrumentos</property>
         <property name="hibernate.connection.username">postgres</property>
@@ -22,7 +23,11 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
   
         <!-- Annotated entity classes -->
-        <mapping class="com.javacodegeeks.example.Car"/>
+        <mapping class="com.gao.model.entities.Rol"/>
+        <mapping class="com.gao.model.entities.Marca"/>
+        <mapping class="com.gao.model.entities.Pais"/>
+        <mapping class="com.gao.model.entities.Usuario"/>
+        <mapping class="com.gao.model.entities.Instrumento"/>
          
     </session-factory>
 </hibernate-configuration>

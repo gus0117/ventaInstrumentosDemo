@@ -15,28 +15,28 @@ public class GenericDaoImp<T,ID> implements IGenericDao<T, ID>{
     private Session session = sessionFactory.openSession();
     
 	public void create(T object) {
-		getSession().beginTransaction();
-		getSession().save(object);
-		getSession().getTransaction().commit();
+		session.beginTransaction();
+		session.save(object);
+		session.getTransaction().commit();
 		
 	}
 
 	public void update(T object) {
-		getSession().beginTransaction();
-		getSession().update(object);
-		getSession().getTransaction().commit();
+		session.beginTransaction();
+		session.update(object);
+		session.getTransaction().commit();
 	}
 
 	public void delete(T object) {
-		getSession().beginTransaction();
-		getSession().delete(object);
-		getSession().getTransaction().commit();
+		session.beginTransaction();
+		session.delete(object);
+		session.getTransaction().commit();
 		
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<T> getAll(Class<T> type) {
-		Session session = getSessionFactory().getCurrentSession();
+		Session session = sessionFactory.openSession();
 		Criteria criteria = session.createCriteria(type);
 		return criteria.list();
 	}
